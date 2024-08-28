@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require("../conexion.php");
+require("../config/Conexion.php");
 
 if (!empty($_GET['id'])) {
     $id = $_GET['id'];

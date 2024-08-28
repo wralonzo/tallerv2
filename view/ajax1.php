@@ -1,5 +1,5 @@
 <?php
-include "../conexion.php";
+require("../config/Conexion.php");
 session_start();
 if (isset($_GET['q'])) {
     $datos = array();

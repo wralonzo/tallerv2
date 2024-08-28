@@ -2,13 +2,7 @@
 //Activamos el almacenamiento en el buffer
 ob_start();
 session_start();
-
-
-
-include "../conexion.php";
-
-
-
+require("../config/Conexion.php");
 if (!isset($_SESSION["nombre"])) {
     header("Location: login.html");
 } else {

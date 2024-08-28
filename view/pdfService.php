@@ -2,10 +2,7 @@
 //Activamos el almacenamiento en el buffer
 ob_start();
 session_start();
-
-
-
-include "../conexion.php";
+require("../config/Conexion.php");
 $idServicio = $_GET["id"];
 
 ?>

@@ -5,10 +5,7 @@ ob_start();
 session_start();
 
 
-
-include "../conexion.php";
-
-
+require("../config/Conexion.php");
 
 if (!empty($_POST)) {
 

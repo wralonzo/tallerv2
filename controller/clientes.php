@@ -37,9 +37,9 @@ switch ($_GET["op"]){
 
  		while ($reg=$rspta->fetch_object()){
  			$data[]=array(
-                "0"=>($reg->condicion)?'<button class="btn btn-warning" onclick="mostrar('.$reg->idCliente.')"><i class="fas fa-edit"></i></button>'.
+                "0"=>($reg->condicion)?'<button data-bs-target="#exampleModalCenter" class="btn btn-warning" onclick="mostrar('.$reg->idCliente.')"><i class="fas fa-edit"></i></button>'.
                 ' <button class="btn btn-danger" onclick="desactivar('.$reg->idCliente.')"><i class="far fa-times-circle"></i></button>':
-                '<button class="btn btn-warning" onclick="mostrar('.$reg->idCliente.')"><i class="fas fa-edit"></i></button>'.
+                '<button class="btn btn-warning" data-bs-target="#exampleModalCenter" onclick="mostrar('.$reg->idCliente.')"><i class="fas fa-edit"></i></button>'.
                 ' <button class="btn btn-primary" onclick="activar('.$reg->idCliente.')"><i class="fa fa-check"></i></button>',
  				"1"=>$reg->Nombre,
  				"2"=>$reg->Apellido,

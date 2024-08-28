@@ -5,7 +5,7 @@ session_start();
 
 
 
-include "../conexion.php";
+require("../config/Conexion.php");
 
 
 

@@ -3,9 +3,7 @@
 ob_start();
 session_start();
 
-
-
-include "../conexion.php";
+require("../config/Conexion.php");
 $idCliente = $_POST["cliente"];
 
 ?>

@@ -2,7 +2,7 @@
 
 session_start();
 
-require("../conexion.php");
+require("../config/Conexion.php");
 
 if(isset($_POST['updatedata'])) {
 

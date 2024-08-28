@@ -29,9 +29,11 @@
         Scripts
     ***********************************-->
  <!-- Required vendors -->
+ <script src="../assets/js/jquery/jquery.min.js"></script>
  <script src="../assets/vendor/global/global.min.js"></script>
  <!-- <script src="../assets/vendor/chart.js/Chart.bundle.min.js"></script> -->
  <script src="../assets/vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+ 
 
  <!-- Apex Chart -->
  <!-- <script src="../assets/vendor/apexchart/apexchart.js"></script> -->
