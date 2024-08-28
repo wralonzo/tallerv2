@@ -1,0 +1,2 @@
+Error al insertar en la tabla de usuarios: 
+Error al insertar en la tabla de usuarios: 
