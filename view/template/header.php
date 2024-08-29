@@ -43,6 +43,14 @@
   <!-- Style css -->
   <link href="../assets/css/style.css" rel="stylesheet" />
   <link href="../assets/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+  <style>
+    .nav-item:hover {
+      background-color: #FFCF6D;
+      /* Change the background color on hover */
+      cursor: pointer;
+    }
+
+  </style>
 </head>
 
 <body>
@@ -195,26 +203,26 @@
     <div class="dlabnav">
       <div class="dlabnav-scroll">
         <ul class="metismenu" id="menu">
-          <li>
+          <li class="nav-item">
             <a class="has-arrow" href="escritorio.php" aria-expanded="false">
               <i class="fas fa-home"></i>
               <span class="nav-text">Dashboard</span>
             </a>
           </li>
-          <li>
+          <li class="nav-item">
             <a class="has-arrow" href="clientes.php" aria-expanded="false">
               <i class="fas fa-user-check"></i>
               <span class="nav-text">Clientes</span>
             </a>
           </li>
 
-          <li>
+          <li class="nav-item">
             <a class="has-arrow" href="vehiculos.php" aria-expanded="false">
               <i class="fas fa-car"></i>
               <span class="nav-text">Vehiculos</span>
             </a>
           </li>
-          <li>
+          <li class="nav-item">
             <a
               class="has-arrow"
               href="javascript:void()"
@@ -223,7 +231,7 @@
               <span class="nav-text">Usuarios</span>
             </a>
             <ul aria-expanded="false">
-              <li><a href="usuarios.php">Ver Usuarios</a></li>
+              <li class="nav-submenu"><a href="usuarios.php">Ver Usuarios</a></li>
             </ul>
           </li>
         </ul>

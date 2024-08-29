@@ -225,20 +225,11 @@ if (!isset($_SESSION["nombre"])) {
                 <label for="">fecha</label>
                 <input type="date" name="fecha" id="fecha" class="form-control" required>
               </div>
-
               <div class="modal-footer">
-
                 <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
                 <button type="submit" name="updatedata" class="btn btn-primary">Guardar</button>
-
-
-
               </div>
             </form>
-
-
-
-
           </div>
         </div>
       </div>

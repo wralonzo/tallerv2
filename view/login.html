@@ -1,104 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Fillow : Fillow Saas Admin  Bootstrap 5 Template"
+    />
+    <meta
+      property="og:title"
+      content="Fillow : Fillow Saas Admin  Bootstrap 5 Template"
+    />
+    <meta
+      property="og:description"
+      content="Fillow : Fillow Saas Admin  Bootstrap 5 Template"
+    />
+    <meta
+      property="og:image"
+      content="https:/fillow.dexignlab.com/xhtml/social-image.png"
+    />
+    <meta name="format-detection" content="telephone=no" />
 
-<head>
+    <!-- PAGE TITLE HERE -->
+    <title>Taller V2</title>
 
+    <!-- FAVICONS ICON -->
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/images/favicon.png"
+    />
+    <link
+      href="../assets/vendor/jquery-nice-select/css/nice-select.css"
+      rel="stylesheet"
+    />
 
+    <link
+      href="../assets/vendor/sweetalert2/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/owl-carousel/owl.carousel.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/nouislider/nouislider.min.css"
+    />
 
-</html>
+    <!-- Style css -->
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <style>
+      .container-l {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70vh; /* Adjust the height as needed */
+      }
 
+      .centered-div-l {
+        width: 50%;
+      }
+    </style>
+  </head>
 
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-	<title>JONASA S.A</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">	
-</head>
-
-<body>
-
-
-	<div class="container-login100" style="background-image: url('images/logo.jpg');">
-		<form method="post" id="frmAcceso">
-			<div class="wrap-login100 p-l-50 p-r-50 p-t-1 p-b-10">
-				<div class="login100-form validate-form">
-					<span class="login100-form-title p-b-10">
-						 <img src="logo.jpg" class="circulo">
-						 Iniciar Sesión
-
-						  
-					</span>
-	
-					<div class="wrap-input100 validate-input m-b-10" data-validate="Enter username or email">
-						<input class="input100" type="text" id="logina" name="logina" placeholder="usuario" autocomplete="new-password">
-						<span class="focus-input100"></span>
-					</div>
-	
-					<div class="wrap-input100 validate-input m-b-25" data-validate="Enter password">
-						<input class="input100" type="password" id="clavea" name="clavea" placeholder="contraseña">
-						<span class="focus-input100"></span>
-					</div>
-					<div class="text-right p-t-8 p-b-20">
-						<a href="#" onclick="abrirModalRestablecerContra()">
-							Olvidaste la contraseña?
-						</a>
-					</div>
-					<div class="container-login100-form-btn">
-						<button type="submit" class="login100-form-btn">
-							Iniciar sesión
-						</button>
-					</div>
-	
-					<div class="text-center p-t-57 p-b-20">
-						<span class="txt1">
-					
-						</span>
-					</div>
-	
-					<div class="flex-c p-b-20">
-						
-					</div>
-	
-	
-				</div>
-	
-			</div>
-		</form>
-	
-	</div>
-
-
-
-	<div id="dropDownSelect1"></div>
-
-<!-- Restablecer contraseña modal -->
-<div class="modal fade" id="modal_restablecer_contra" role="dialog">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title"><b>Restablecer contraseña</b></h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="col-lg-12">
-                        <label for=""><b>Ingrese el correo registrado para enviarle una contraseña que le asignara el sistema</b></label>
-                        <input type="email" class="form-control" id="txt_email" placeholder="Ingrese Email">
-                        <br>
+  <body>
+    <div id="main-wrapper">
+      <div id="content-wrapper">
+        <div class="container-l">
+          <div class="centered-div-l">
+            <div class="card text-center">
+              <div class="card-header"></div>
+              <div class="card-body">
+                <div class="basic-form row page-titles">
+                  <form method="post" id="frmAcceso">
+                    <h1 class="text-center">Iniciar sesión</h1>
+                    <br />
+                    <div class="input-group mb-3 input-info">
+                      <span class="input-group-text">Usuario</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="logina"
+                        id="logina"
+                        placeholder="usuario"
+                      />
                     </div>
-                   
+                    <br />
+                    <div class="input-group input-danger">
+                      <span class="input-group-text">Contraseña</span>
+                      <input
+                        class="form-control"
+                        type="password"
+                        id="clavea"
+                        name="clavea"
+                        placeholder="contraseña"
+                      />
+                    </div>
+                    <div class="card-text">
+                      <br /><br />
+                      <button
+                        type="submit"
+                        class="btn btn-primary btn-rounded btn-lg btn-card"
+                      >
+                        Iniciar sesión
+                      </button>
+                    </div>
+                  </form>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" onclick="restablecerContra()">Enviar</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-<script src="../assets/js/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="scripts/login.js"></script>
-
-</body>
-
+    <script src="../assets/js/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/global/global.min.js"></script>
+    <script src="../assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="../assets/js/plugins-init/sweetalert.init.js"></script>
+    <script src="../assets/vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="../assets/js/custom.min.js"></script>
+    <script src="../assets/js/dlabnav-init.js"></script>
+    <script src="../assets/js/demo.js"></script>
+    <script src="../assets/js/styleSwitcher.js"></script>
+    <script type="text/javascript" src="scripts/login.js"></script>
+  </body>
 </html>

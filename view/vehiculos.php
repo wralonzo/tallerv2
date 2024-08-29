@@ -67,21 +67,12 @@ if (!empty($_POST)) {
   }
 }
 
-
-
-
-
-
-
 if (!isset($_SESSION["nombre"])) {
   header("Location: login.html");
 } else {
   require 'template/header.php';
 
   if ($_SESSION['vehiculos'] == 1) {
-
-
-
 
 ?>
 
@@ -216,7 +207,7 @@ if (!isset($_SESSION["nombre"])) {
                       <td><?php echo $data['fecha2']; ?></td>
                       <td>
 
-                        <button type="submit" class="btn btn-warning editbtn" data-toggle="modal" data-target="#editar"><i class='fas fa-redo-alt'></i></button>
+                        <button type="submit" class="btn btn-warning editbtn" data-bs-toggle="modal" data-bs-target="#editar"><i class='fas fa-redo-alt'></i></button>
 
 
                         <form action="eliminar_vehiculo.php?id=<?php echo $data['idVehiculo']; ?>" method="post" class="confirmar d-inline">
@@ -236,74 +227,68 @@ if (!isset($_SESSION["nombre"])) {
     </div>
 
 
-    <div class="content-body">
-      <!-- row -->
-      <div class="container-fluid">
-        <div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">EDITAR VEHICULO</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+
+    <div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">EDITAR VEHICULO</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="editar_vehiculo.php" method="post">
+              <input type="hidden" name="update_id" id="update_id">
+
+              <div class="form-group">
+                <label for="">Nombre</label>
+                <input type="text" name="nombre" id="nombre" class="form-control" disabled>
               </div>
-              <div class="modal-body">
-                <form action="editar_vehiculo.php" method="post">
-                  <input type="hidden" name="update_id" id="update_id">
-
-                  <div class="form-group">
-                    <label for="">Nombre</label>
-                    <input type="text" name="nombre" id="nombre" class="form-control" disabled>
-                  </div>
 
 
-                  <div class="form-group">
-                    <label for="">No de Placa</label>
-                    <input type="text" name="placa" id="placa" class="form-control" required>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="">No de VIN</label>
-                    <input type="text" name="vin" id="vin" class="form-control" required>
-                  </div>
-
-
-                  <div class="form-group">
-                    <label for="">Marca vehículo</label>
-                    <input type="text" name="marca" id="marca" class="form-control" required>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="">Tipo vehículo</label>
-                    <input type="text" name="tipo" id="tipo" class="form-control" required>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="">Color vehículo</label>
-                    <input type="text" name="color" id="color" class="form-control" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="">Fecha Ingreso</label>
-                    <input type="text" name="fecha" id="fecha" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="">Fecha Salisa</label>
-                    <input type="text" name="fecha2" id="fecha2" class="form-control">
-                  </div>
-
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" name="updatedata" class="btn btn-primary">Guardar</button>
-                  </div>
-                </form>
+              <div class="form-group">
+                <label for="">No de Placa</label>
+                <input type="text" name="placa" id="placa" class="form-control" required>
               </div>
-            </div>
+
+              <div class="form-group">
+                <label for="">No de VIN</label>
+                <input type="text" name="vin" id="vin" class="form-control" required>
+              </div>
+
+
+              <div class="form-group">
+                <label for="">Marca vehículo</label>
+                <input type="text" name="marca" id="marca" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label for="">Tipo vehículo</label>
+                <input type="text" name="tipo" id="tipo" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label for="">Color vehículo</label>
+                <input type="text" name="color" id="color" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="">Fecha Ingreso</label>
+                <input type="date" name="fecha" id="fecha" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="">Fecha Salisa</label>
+                <input type="date" name="fecha2" id="fecha2" class="form-control" required>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                <button type="submit" name="updatedata" class="btn btn-primary">Guardar</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-
-
 
     </div><!-- /.content-wrapper -->
     <!--Fin-Contenido-->
