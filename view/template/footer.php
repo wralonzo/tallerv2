@@ -33,7 +33,7 @@
  <script src="../assets/vendor/global/global.min.js"></script>
  <!-- <script src="../assets/vendor/chart.js/Chart.bundle.min.js"></script> -->
  <script src="../assets/vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
- 
+
 
  <!-- Apex Chart -->
  <!-- <script src="../assets/vendor/apexchart/apexchart.js"></script> -->
@@ -45,8 +45,9 @@
  <!-- Dashboard 1 -->
  <script src="../assets/js/dashboard/dashboard-1.js"></script>
 
+ <script src="../assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
+ <script src="../assets/js/plugins-init/sweetalert.init.js"></script>
  <script src="../assets/vendor/owl-carousel/owl.carousel.js"></script>
-
  <script src="../assets/js/custom.min.js"></script>
  <script src="../assets/js/dlabnav-init.js"></script>
  <script src="../assets/js/demo.js"></script>

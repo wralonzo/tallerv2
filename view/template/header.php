@@ -43,13 +43,15 @@
   <!-- Style css -->
   <link href="../assets/css/style.css" rel="stylesheet" />
   <link href="../assets/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link
+    href="../assets/vendor/sweetalert2/dist/sweetalert2.min.css"
+    rel="stylesheet" />
   <style>
     .nav-item:hover {
       background-color: #FFCF6D;
       /* Change the background color on hover */
       cursor: pointer;
     }
-
   </style>
 </head>
 
@@ -166,7 +168,7 @@
                     </svg>
                     <span class="ms-2">Inbox </span>
                   </a>
-                  <a href="page-error-404.html" class="dropdown-item ai-icon">
+                  <a href="../controller/usuario.php?op=salir" class="dropdown-item ai-icon">
                     <svg
                       id="icon-logout"
                       xmlns="http://www.w3.org/2000/svg"
@@ -223,6 +225,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="has-arrow" href="servicios.php" aria-expanded="false">
+              <i class="fas fa-car"></i>
+              <span class="nav-text">Servicios</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a
               class="has-arrow"
               href="javascript:void()"
@@ -234,6 +242,45 @@
               <li class="nav-submenu"><a href="usuarios.php">Ver Usuarios</a></li>
             </ul>
           </li>
+
+          <li class="nav-item">
+            <a
+              class="has-arrow"
+              href="javascript:void()"
+              aria-expanded="false">
+              <i class="fas fa-info-circle"></i>
+              <span class="nav-text">Taller</span>
+            </a>
+            <ul aria-expanded="false">
+              <li class="nav-submenu"><a href="categoria.php">Categorías</a></li>
+            </ul>
+
+            <ul aria-expanded="false">
+              <li class="nav-submenu"><a href="informatica.php">Costos</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="has-arrow"
+              href="javascript:void()"
+              aria-expanded="false">
+              <i class="fas fa-info-circle"></i>
+              <span class="nav-text">Reportes</span>
+            </a>
+            <ul aria-expanded="false">
+              <li class="nav-submenu"><a href="pdfclientes.php">Clientes</a></li>
+            </ul>
+
+            <ul aria-expanded="false">
+              <li class="nav-submenu"><a href="pdfvehi.php">Vehículos</a></li>
+            </ul>
+            <ul aria-expanded="false">
+              <li class="nav-submenu"><a href="pdfservicio.php">Servicios</a></li>
+            </ul>
+          </li>
+
+
         </ul>
 
         <div class="copyright">

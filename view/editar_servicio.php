@@ -13,6 +13,8 @@ if (isset($_POST['updatedata'])) {
   $sql = "UPDATE servicio SET Anticipo='$Anticipo', Total='$Total' WHERE idServicio = '$id'";
   $query_run = mysqli_query($conexion, $sql);
 
+  var_dump($sql);
+
   if ($query_run) {
     echo '<script type="text/javascript">alert("Elemento actualizado");</script>';
     header("location: servicios.php");

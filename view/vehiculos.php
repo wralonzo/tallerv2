@@ -81,7 +81,6 @@ if (!isset($_SESSION["nombre"])) {
     <!--Contenido-->
     <!-- Content Wrapper. Contains page content -->
     <div class="content-body">
-      <!-- row -->
       <div class="container-fluid">
         <div class="card">
           <h2>Vehículos</h2>
