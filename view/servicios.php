@@ -40,11 +40,11 @@ if (!empty($_POST)) {
           $tamano_archivo = $_FILES['fileService']['size'];
 
           // Validación del archivo (opcional)
-          // if (move_uploaded_file($_FILES['fileService']['tmp_name'], './uploads/' . $nombre_archivo)) {
-          //   echo "El archivo ha sido subido correctamente.";
-          // } else {
-          //   echo "Ha ocurrido un error al subir el archivo.";
-          // }
+          if (move_uploaded_file($_FILES['fileService']['tmp_name'], './uploads/' . $nombre_archivo)) {
+            // echo "El archivo ha sido subido correctamente.";
+          } else {
+            // echo "Ha ocurrido un error al subir el archivo.";
+          }
         }
 
         $usuario = $_SESSION["idusuario"];
@@ -267,7 +267,7 @@ if (!isset($_SESSION["nombre"])) {
                   while ($data = mysqli_fetch_assoc($query)) { ?>
                     <tr>
                       <td style="font-size: 10px !important;"><?php echo $data['idServicio']; ?></td>
-                      <td style="font-size: 10px !important;"><?php echo $data['Nombre']; ?></td>
+                      <td style="font-size: 10px !important;"><?php echo $data['Nombre']; ?> <?php echo $data['Apellido']; ?></td>
                       <td style="font-size: 10px !important;"><?php echo $data['descripcion']; ?>
                         <?php
                         $filename = $data['image'];
@@ -280,7 +280,7 @@ if (!isset($_SESSION["nombre"])) {
                         ?>
                           <img width="10%" src="./uploads/<?php echo $data['image']; ?>" alt="servicio" srcset="">
                         <?php else: ?>
-                          <a href="./uploads/<?php echo $data['image']; ?>" target="_blank" class="text-primary"><?php echo $extension ?></a>
+                          <a href="./uploads/<?php echo $data['image']; ?>" target="_blank" class="text-primary">ver <?php echo $extension ?></a>
                         <?php endif; ?>
                       </td>
                       <td style="font-size: 10px !important;"><?php echo $data['tipoVehiculo'];    ?></td>
@@ -479,6 +479,7 @@ if (!isset($_SESSION["nombre"])) {
         data = JSON.parse(data);
         for (let i = 0; i < data.length; i++) {
           $('#Detalle').append(new Option(data[i].Detalle, data[i].idCosto));
+          $('#costoprecio').empty();
           $('#costoprecio').append(
             data.map(function(item) {
               var option = $('<option>', {

@@ -7,6 +7,14 @@ $idServicio = $_GET["id"];
 
 ?>
 
+<style>
+    @media print {
+        .noprint {
+            color: white;
+            display: none;
+        }
+    }
+</style>
 <div class="content-wrapper">
 
     <div class="card">
@@ -31,8 +39,11 @@ $idServicio = $_GET["id"];
 
             </header>
             <div style="height:50px"></div>
-
-            <!--Ejemplo tabla con DataTables-->
+            <center>
+                <a class="noprint" href="servicios.php">
+                    <h1 style="color: white;">Regresar</h1>
+                </a>
+            </center>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -135,7 +146,7 @@ $idServicio = $_GET["id"];
                         <table width="110%">
                             <tr>
                                 <th width="20%">
-                                    <img src="./public/img/logo.jpeg" width="80%" alt="">
+                                    <img src="../files/system/logo.jpeg" width="80%" alt="">
                                 </th>
                                 <th width="90%">
                                     <div class="header">
