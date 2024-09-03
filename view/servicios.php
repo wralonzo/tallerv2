@@ -269,19 +269,20 @@ if (!isset($_SESSION["nombre"])) {
                       <td style="font-size: 10px !important;"><?php echo $data['idServicio']; ?></td>
                       <td style="font-size: 10px !important;"><?php echo $data['Nombre']; ?> <?php echo $data['Apellido']; ?></td>
                       <td style="font-size: 10px !important;"><?php echo $data['descripcion']; ?>
+                      <a href="./uploads/<?php echo $data['image']; ?>" target="_blank" class="text-primary">ver Archivo <?php echo $extension ?></a>
                         <?php
-                        $filename = $data['image'];
-                        $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+                        // $filename = $data['image'];
+                        // $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
 
-                        $array = array("png", "jpg", "jpeg", "gif");
-                        $valueToSearch = $extension;
-                        if (in_array(strtolower($valueToSearch), array_map('strtolower', $array), true)):
+                        // $array = array("png", "jpg", "jpeg", "gif");
+                        // $valueToSearch = $extension;
+                        // if (in_array(strtolower($valueToSearch), array_map('strtolower', $array), true)):
 
                         ?>
-                          <img width="10%" src="./uploads/<?php echo $data['image']; ?>" alt="servicio" srcset="">
-                        <?php else: ?>
-                          <a href="./uploads/<?php echo $data['image']; ?>" target="_blank" class="text-primary">ver <?php echo $extension ?></a>
-                        <?php endif; ?>
+                          <!-- <img width="10%" src="./uploads/<?php echo $data['image']; ?>" alt="servicio" srcset=""> -->
+                        <?php //else: ?>
+                          <!-- <a href="./uploads/<?php echo $data['image']; ?>" target="_blank" class="text-primary">ver <?php echo $extension ?></a> -->
+                        <?php // endif; ?>
                       </td>
                       <td style="font-size: 10px !important;"><?php echo $data['tipoVehiculo'];    ?></td>
                       <td style="font-size: 10px !important;"><?php echo $data['Precio']; ?></td>
