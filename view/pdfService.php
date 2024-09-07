@@ -106,7 +106,7 @@ $idServicio = $_GET["id"];
                     }
                 </style>
                 <?php
-                $query = mysqli_query($conexion, "SELECT p.idServicio, pd.Nombre, p.Total,
+                $query = mysqli_query($conexion, "SELECT p.idServicio, pd.Nombre, pd.Apellido, p.Total,
                     pd.Direccion, p.created_at, pd.Telefono, u.nombre as mecanico, p.garantia,
                     p.Detalle, pr.tipoVehiculo, pt.descripcion, pt.nombre, ph.Precio, pr.Placa FROM
                     servicio p
@@ -167,7 +167,7 @@ $idServicio = $_GET["id"];
                                 <table align="center" cellspacing="10">
                                     <tr>
                                         <th>
-                                            <p>Nombre: <?= $data->Nombre ?></p>
+                                            <p>Nombre: <?= $data->Nombre ?>  <?= $data->Nombre ?></p>
                                             <p>DIRECCIÓN: <?= $data->Direccion ?></p>
                                             <p>PLACA: <?= $data->Placa ?></p>
                                             <p>GARANTÍA: <?= $data->garantia ?> días</p>

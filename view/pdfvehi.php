@@ -64,7 +64,7 @@ if (!isset($_SESSION["nombre"])) {
                       </thead>
                       <tbody>
                         <?php
-                        $query = mysqli_query($conexion, "SELECT p.idVehiculo, pr.Nombre, p.Placa, p.Vin, p.Marca, p.tipoVehiculo,p.fecha,p.fecha2 FROM
+                        $query = mysqli_query($conexion, "SELECT p.idVehiculo, pr.Nombre, pr.Apellido, p.Placa, p.Vin, p.Marca, p.tipoVehiculo,p.fecha,p.fecha2 FROM
                                 vehiculo p
                                 INNER JOIN
                                 cliente pr
@@ -79,7 +79,7 @@ if (!isset($_SESSION["nombre"])) {
                           while ($data = mysqli_fetch_array($query)) { ?>
                             <tr>
                               <td><?php echo $data['idVehiculo']; ?></td>
-                              <td><?php echo $data['Nombre']; ?></td>
+                              <td><?php echo $data['Nombre']; ?> <?php echo $data['Apellido']; ?></td>
                               <td><?php echo $data['Placa']; ?></td>
 
                               <td><?php echo $data['Marca']; ?></td>

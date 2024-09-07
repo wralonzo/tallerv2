@@ -75,7 +75,7 @@ if (!isset($_SESSION["nombre"])) {
                                                         <tr>
 
                                                             <td><?php echo $data['idCliente']; ?></td>
-                                                            <td><?php echo $data['Nombre']; ?></td>
+                                                            <td><?php echo $data['Nombre']; ?> <?php echo $data['Apellido']; ?></td>
                                                             <td><?php echo $data['Apellido']; ?></td>
                                                             <td><?php echo $data['Telefono']; ?></td>
                                                             <td><?php echo $data['correo']; ?></td>

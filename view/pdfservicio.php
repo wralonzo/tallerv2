@@ -84,7 +84,7 @@ if (!isset($_SESSION["nombre"])) {
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                $query = mysqli_query($conexion, "SELECT p.idServicio, pd.Nombre, p.created_at,
+                                                $query = mysqli_query($conexion, "SELECT p.idServicio, pd.Nombre, pd.Apellido, p.created_at,
                                                 p.Detalle, pr.tipoVehiculo, pt.descripcion, ph.Precio, pr.Placa FROM
                                                 servicio p
                                                 
@@ -115,7 +115,7 @@ if (!isset($_SESSION["nombre"])) {
                                                     while ($data = mysqli_fetch_assoc($query)) { ?>
                                                         <tr>
                                                             <td><?php echo $data['idServicio']; ?></td>
-                                                            <td><?php echo $data['Nombre']; ?></td>
+                                                            <td><?php echo $data['Nombre']; ?> <?php echo $data['Apellido']; ?></td>
 
                                                             <td><?php echo $data['descripcion']; ?></td>
                                                             <td><?php echo $data['tipoVehiculo'];    ?></td>
