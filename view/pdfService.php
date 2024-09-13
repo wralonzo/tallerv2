@@ -106,7 +106,7 @@ $idServicio = $_GET["id"];
                     }
                 </style>
                 <?php
-                $query = mysqli_query($conexion, "SELECT p.idServicio, pd.Nombre, pd.Apellido, p.Total,
+                $query = mysqli_query($conexion, "SELECT p.idServicio, pd.Nombre, pd.Apellido, p.Total, p.descuento, p.Anticipo,
                     pd.Direccion, p.created_at, pd.Telefono, u.nombre as mecanico, p.garantia,
                     p.Detalle, pr.tipoVehiculo, pt.descripcion, pt.nombre, ph.Precio, pr.Placa FROM
                     servicio p
@@ -167,7 +167,7 @@ $idServicio = $_GET["id"];
                                 <table align="center" cellspacing="10">
                                     <tr>
                                         <th>
-                                            <p>Nombre: <?= $data->Nombre ?>  <?= $data->Nombre ?></p>
+                                            <p>Nombre: <?= $data->Nombre ?> <?= $data->Nombre ?></p>
                                             <p>DIRECCIÓN: <?= $data->Direccion ?></p>
                                             <p>PLACA: <?= $data->Placa ?></p>
                                             <p>GARANTÍA: <?= $data->garantia ?> días</p>
@@ -195,6 +195,9 @@ $idServicio = $_GET["id"];
                                         <th width="40%">
                                             Descripción
                                         </th>
+                                        <th width="20%">Costo</th>
+                                        <th width="20%">Descuento</th>
+                                        <th width="20%">Anticipo</th>
                                         <th width="20%">Valor</th>
                                     </tr>
                                     <tbody>
@@ -208,6 +211,15 @@ $idServicio = $_GET["id"];
                                             </td>
                                             <td>
                                                 <?= $data->nombre ?>: <?= $data->descripcion ?>
+                                            </td>
+                                            <td>
+                                                Q. <?= $data->Precio ?>
+                                            </td>
+                                            <td>
+                                                Q. <?= $data->descuento ?>
+                                            </td>
+                                            <td>
+                                                Q. <?= $data->Anticipo ?>
                                             </td>
                                             <td>
                                                 Q. <?= $data->Total ?>
