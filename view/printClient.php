@@ -32,7 +32,11 @@ $idCliente = $_POST["cliente"];
 
             </header>
             <div style="height:50px"></div>
-
+            <center>
+                <a class="noprint" href="pdfservicio.php">
+                    <h1 style="color: white;">Regresar</h1>
+                </a>
+            </center>
             <!--Ejemplo tabla con DataTables-->
             <div class="container">
                 <div class="row">
@@ -41,8 +45,16 @@ $idCliente = $_POST["cliente"];
                 </div>
                 <html>
                 <style>
+                    @media print {
+                        .noprint {
+                            color: white;
+                            display: none;
+                        }
+                    }
+
                     body {
                         font-family: 'Roboto', sans-serif;
+                        font-size: 10px;
                         margin: 0;
                         padding: 0;
                         background-color: #264653;
@@ -96,7 +108,7 @@ $idCliente = $_POST["cliente"];
                     }
                 </style>
                 <?php
-                $query = mysqli_query($conexion, "SELECT p.idServicio, pd.Nombre, p.Total,
+                $query = mysqli_query($conexion, "SELECT p.idServicio, pd.Nombre, pd.Apellido, p.Total,
                     pd.Direccion, p.created_at, pd.Telefono, u.nombre as mecanico, p.garantia,
                     p.Detalle, pr.tipoVehiculo, pt.descripcion, pt.nombre, ph.Precio, pr.Placa FROM
                     servicio p
@@ -135,7 +147,7 @@ $idCliente = $_POST["cliente"];
                         <table width="110%">
                             <tr>
                                 <th width="20%">
-                                    <img src="./public/img/logo.jpeg" width="80%" alt="">
+                                    <img src="../files/system/logo.jpeg" width="80%" alt="">
                                 </th>
                                 <th width="90%">
                                     <div class="header" style="font-size: 12px;">
@@ -144,7 +156,7 @@ $idCliente = $_POST["cliente"];
                                         <p>SUZUKI • HONDA • TOYOTA • LEXUS • HYUNDAI • MERCEDES-BENZ • BMW • VOLVO</p>
                                         <p>Reparación de todo tipo de vehículos de todos los marcas en general</p>
                                         <p>Sector escuela regional Cuilco, Huehuetenango.</p>
-                                        <p>Teléfono: 4017-5769-5116, En Dios confiamos!!!</p>
+                                        <p>Teléfono: 4017-5966/5991-1694/3000-0511, En Dios confiamos!!!</p>
                                     </div>
                                 </th>
                             </tr>
@@ -154,7 +166,7 @@ $idCliente = $_POST["cliente"];
                                 <table align="center" cellspacing="10">
                                     <tr>
                                         <th>
-                                            <p>Nombre: <?= $data->Nombre ?></p>
+                                            <p>Nombre: <?= $data->Nombre ?> <?= $data->Apellido ?></p>
                                             <p>DIRECCIÓN: <?= $data->Direccion ?></p>
                                             <p>PLACA: <?= $data->Placa ?></p>
                                             <p>GARANTÍA: <?= $data->garantia ?> días</p>
@@ -183,11 +195,14 @@ $idCliente = $_POST["cliente"];
                                         <th width="40%">
                                             Descripción
                                         </th>
+                                        <th width="20%">Costo</th>
+                                        <th width="20%">Descuento</th>
+                                        <th width="10%">Anticipo</th>
                                         <th width="20%">Valor</th>
                                     </tr>
                                     <tbody>
                                         <?php
-                                        $queryReport = mysqli_query($conexion, "SELECT p.idServicio, pd.Nombre, p.Total,
+                                        $queryReport = mysqli_query($conexion, "SELECT p.idServicio, pd.Nombre, p.Total, p.descuento, p.Anticipo,
                                             pd.Direccion, p.created_at, pd.Telefono, u.nombre as mecanico,
                                             p.Detalle, pr.tipoVehiculo, pt.descripcion, pt.nombre, ph.Precio, pr.Placa FROM
                                             servicio p
@@ -222,9 +237,15 @@ $idCliente = $_POST["cliente"];
 
                                         if ($resultArray > 0) {
                                             $totalFactura = 0;
+                                            $totalDecuento = 0;
+                                            $totalAnticipo = 0;
+                                            $totalCosto = 0;
                                             $contador = 0;
                                             while ($newData = mysqli_fetch_assoc($queryReport)) {
                                                 $totalFactura = $totalFactura + $newData['Total'];
+                                                $totalCosto = $totalCosto + $newData['Precio'];
+                                                $totalDecuento = $totalDecuento + $newData['descuento'];
+                                                $totalAnticipo = $totalAnticipo + $newData['Anticipo'];
                                                 $contador = $contador + 1;
                                         ?>
                                                 <tr>
@@ -239,6 +260,15 @@ $idCliente = $_POST["cliente"];
                                                         <?= $newData['nombre'] ?>: <?= $newData['descripcion'] ?>
                                                     </td>
                                                     <td>
+                                                        Q. <?= $newData['Precio'] ?>
+                                                    </td>
+                                                    <td>
+                                                        Q. <?= $newData['descuento'] ?>
+                                                    </td>
+                                                    <td>
+                                                        Q. <?= $newData['Anticipo'] ?>
+                                                    </td>
+                                                    <td>
                                                         Q. <?= $newData['Total'] ?>
                                                     </td>
 
@@ -249,6 +279,9 @@ $idCliente = $_POST["cliente"];
                                             <td width="20%"><strong>Total</strong></td>
                                             <td width="20%"><strong><?= $contador; ?></strong></td>
                                             <td width="40%"><strong>Total</strong></td>
+                                            <td width="20%"><strong>Q.<?= $totalCosto; ?></strong></td>
+                                            <td width="20%"><strong>Q.<?= $totalDecuento; ?></strong></td>
+                                            <td width="20%"><strong>Q.<?= $totalAnticipo; ?></strong></td>
                                             <td width="20%"><strong>Q.<?= $totalFactura; ?></strong></td>
                                         </tr>
                                     </tbody>

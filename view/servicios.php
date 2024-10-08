@@ -269,7 +269,7 @@ if (!isset($_SESSION["nombre"])) {
                       <td style="font-size: 10px !important;"><?php echo $data['idServicio']; ?></td>
                       <td style="font-size: 10px !important;"><?php echo $data['Nombre']; ?> <?php echo $data['Apellido']; ?></td>
                       <td style="font-size: 10px !important;"><?php echo $data['descripcion']; ?>
-                      <a href="./uploads/<?php echo $data['image']; ?>" target="_blank" class="text-primary">ver Archivo <?php echo $extension ?></a>
+                        <a href="./uploads/<?php echo $data['image']; ?>" target="_blank" class="text-primary">ver Archivo <?php echo $extension ?></a>
                         <?php
                         // $filename = $data['image'];
                         // $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
@@ -279,10 +279,12 @@ if (!isset($_SESSION["nombre"])) {
                         // if (in_array(strtolower($valueToSearch), array_map('strtolower', $array), true)):
 
                         ?>
-                          <!-- <img width="10%" src="./uploads/<?php echo $data['image']; ?>" alt="servicio" srcset=""> -->
-                        <?php //else: ?>
-                          <!-- <a href="./uploads/<?php echo $data['image']; ?>" target="_blank" class="text-primary">ver <?php echo $extension ?></a> -->
-                        <?php // endif; ?>
+                        <!-- <img width="10%" src="./uploads/<?php echo $data['image']; ?>" alt="servicio" srcset=""> -->
+                        <?php //else: 
+                        ?>
+                        <!-- <a href="./uploads/<?php echo $data['image']; ?>" target="_blank" class="text-primary">ver <?php echo $extension ?></a> -->
+                        <?php // endif; 
+                        ?>
                       </td>
                       <td style="font-size: 10px !important;"><?php echo $data['tipoVehiculo'];    ?></td>
                       <td style="font-size: 10px !important;"><?php echo $data['Precio']; ?></td>
@@ -481,6 +483,7 @@ if (!isset($_SESSION["nombre"])) {
         for (let i = 0; i < data.length; i++) {
           $('#Detalle').append(new Option(data[i].Detalle, data[i].idCosto));
           $('#costoprecio').empty();
+          console.log('viene aqui');
           $('#costoprecio').append(
             data.map(function(item) {
               var option = $('<option>', {
@@ -542,11 +545,11 @@ if (!isset($_SESSION["nombre"])) {
       var textSelected = optionSelected.text();
       $.get("../controller/costo.php?op=client&id=" + valueSelected, function(data) {
         $('#Detalle').empty();
-        $('#costoprecio').empty();
         data = JSON.parse(data);
         for (let i = 0; i < data.length; i++) {
+          console.log('viene aqui');
           $('#Detalle').append(new Option(data[i].Detalle, data[i].idCosto));
-          // <option value="<?php echo $idCosto; ?>" data-precio="<?php echo $precio; ?>"><?php echo $precio; ?></option>
+          $('#costoprecio').empty();
           $('#costoprecio').append(
             data.map(function(item) {
               var option = $('<option>', {
@@ -557,8 +560,6 @@ if (!isset($_SESSION["nombre"])) {
               return option;
             })
           );
-
-          // $('#costoprecio').append(new Option(data[i].idCosto, data[i].Precio));
         }
 
       });

@@ -70,43 +70,50 @@ if (!isset($_SESSION["nombre"])) {
                             </form>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="table-responsive">
+                                    <div class="table-responsive" style="font-size: 10px;">
                                         <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                                            <thead>
+                                            <thead style="font-size: 10px;">
                                                 <tr>
                                                     <th>ID</th>
                                                     <th>NOMBRE</th>
                                                     <th>DETALLE</th>
                                                     <th>PLACA VEHICULO</th>
-                                                    <th>COSTO</th>
+                                                    <th>Costo</th>
+                                                    <th>ANTICIPO</th>
+                                                    <th>DESCUENTO</th>
+                                                    <th>TOTAL</th>
                                                     <th>FECHA</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                $query = mysqli_query($conexion, "SELECT p.idServicio, pd.Nombre, pd.Apellido, p.created_at,
-                                                p.Detalle, pr.tipoVehiculo, pt.descripcion, ph.Precio, pr.Placa FROM
-                                                servicio p
-                                                
-                                                INNER JOIN
-                                                vehiculo pr
-                                                ON
-                                                p.idVehiculo = pr.idVehiculo
-                                                
-                                                INNER JOIN
-                                                categoria pt
-                                                ON
-                                                p.idCategoria = pt.idcategoria
-                                                
-                                                INNER JOIN
-                                                costo ph
-                                                ON
-                                                p.idCosto= ph.idCosto
-                                                
-                                                INNER JOIN
-                                                cliente pd
-                                                ON
-                                                p.Nombre = pd.idCliente
+                                                $query = mysqli_query($conexion, "SELECT p.idServicio, p.created_at, pd.Nombre,pd.Apellido, p.descuento, p.facturado, p.image,
+                                                    p.Detalle, p.Anticipo, p.Total, pr.tipoVehiculo, pt.descripcion, ph.Precio, pr.Placa, u.nombre as mecanico FROM
+                                                    servicio p
+                                                    
+                                                    INNER JOIN
+                                                    vehiculo pr
+                                                    ON
+                                                    p.idVehiculo = pr.idVehiculo
+                                                    
+                                                    INNER JOIN
+                                                    categoria pt
+                                                    ON
+                                                    p.idCategoria = pt.idcategoria                   
+                                                    
+                                                    INNER JOIN
+                                                    costo ph
+                                                    ON
+                                                    p.idCosto= ph.idCosto
+                                                    
+                                                    INNER JOIN
+                                                    cliente pd
+                                                    ON
+                                                    p.Nombre = pd.idCliente
+
+                                                    INNER JOIN 
+                                                    usuario u
+                                                    on u.idusuario = p.mecanico
 
                                                 WHERE idServicio = p.idServicio ");
 
@@ -120,6 +127,9 @@ if (!isset($_SESSION["nombre"])) {
                                                             <td><?php echo $data['descripcion']; ?></td>
                                                             <td><?php echo $data['tipoVehiculo'];    ?></td>
                                                             <td><?php echo $data['Precio']; ?></td>
+                                                            <td><?php echo $data['Anticipo']; ?></td>
+                                                            <td><?php echo $data['descuento']; ?></td>
+                                                            <td><?php echo $data['Total']; ?></td>
                                                             <td><?php echo $data['created_at']; ?></td>
 
                                                         </tr>

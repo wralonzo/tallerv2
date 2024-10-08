@@ -156,7 +156,7 @@ $idServicio = $_GET["id"];
                                             <p>SUZUKI • HONDA • TOYOTA • LEXUS • HYUNDAI • MERCEDES-BENZ • BMW • VOLVO</p>
                                             <p>Reparación de todo tipo de vehículos de todos los marcas en general</p>
                                             <p>Sector escuela regional Cuilco, Huehuetenango.</p>
-                                            <p>Teléfono: 4017-5769-5116, En Dios confiamos!!!</p>
+                                            <p>Teléfono: 4017-5966/5991-1694/3000-0511, En Dios confiamos!!!</p>
                                         </div>
                                     </div>
                                 </th>
@@ -167,7 +167,7 @@ $idServicio = $_GET["id"];
                                 <table align="center" cellspacing="10">
                                     <tr>
                                         <th>
-                                            <p>Nombre: <?= $data->Nombre ?> <?= $data->Nombre ?></p>
+                                            <p>Nombre: <?= $data->Nombre ?> <?= $data->Apellido ?></p>
                                             <p>DIRECCIÓN: <?= $data->Direccion ?></p>
                                             <p>PLACA: <?= $data->Placa ?></p>
                                             <p>GARANTÍA: <?= $data->garantia ?> días</p>
@@ -184,7 +184,7 @@ $idServicio = $_GET["id"];
                         </div>
                         <div class="header container" width="120%" border="1">
                             <div>
-                                <table align="center" border="1">
+                                <table align="center" border="1" width="105%">
                                     <tr align="center">
                                         <th width="20%">
                                             Id
@@ -197,8 +197,8 @@ $idServicio = $_GET["id"];
                                         </th>
                                         <th width="20%">Costo</th>
                                         <th width="20%">Descuento</th>
-                                        <th width="20%">Anticipo</th>
-                                        <th width="20%">Valor</th>
+                                        <th width="10%">Anticipo</th>
+                                        <th width="40%">Valor</th>
                                     </tr>
                                     <tbody>
 
