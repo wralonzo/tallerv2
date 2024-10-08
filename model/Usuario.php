@@ -18,7 +18,6 @@ class Usuario
 				throw new Exception("Error preparing statement: " . $conexion->error);
 			}
 			call_user_func_array([$stmt, 'bind_param'], array_merge([str_repeat('s', count($params))], $params));
-			$stmt->execute();
 			if ($stmt->error) {
 				throw new Exception("Error executing query: " . $stmt->error);
 			}
