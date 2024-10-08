@@ -91,18 +91,7 @@ if (!isset($_SESSION["nombre"])) {
                   <div class="form-group">
                     <label for="Nombre">Nombre Cliente</label>
                     <select class="form-control" placeholder="Seleccionar" name="Nombre" id="Nombre" required>
-                      <?php
-                      $sql = "SELECT * FROM cliente";
-                      $query = mysqli_query($conexion, $sql);
-                      while ($data = mysqli_fetch_assoc($query)) {
-                        $id = $data['idCliente'];
-                        $nombre = $data['Nombre'];
-                        $apellido = $data['Apellido'];
-                      ?>
-                        <option value="<?php echo $id; ?>"><?php echo $nombre . ' ' . $apellido; ?></option>
-                      <?php
-                      }
-                      ?>
+                     
                     </select>
                   </div>
                 </div>
@@ -127,19 +116,7 @@ if (!isset($_SESSION["nombre"])) {
                   <div class="form-group">
                     <label for="Categoriat">Categoría Servicio</label>
                     <select class="form-control" placeholder="Seleccionar" name="Categoriat" id="Categoriat" required>
-                      <?php
-                      $sql = "SELECT * FROM categoria";
-                      $query = mysqli_query($conexion, $sql);
-                      $idCostoQ = 0;
-                      while ($data = mysqli_fetch_assoc($query)) {
-
-                        $idCostoQ = $data['idcategoria'];
-                        $descripcion = $data['nombre'];
-                      ?>
-                        <option value="<?php echo $idCostoQ;  ?>"><?php echo $descripcion; ?></option>
-                      <?php
-                      }
-                      ?>
+                     
                     </select>
                   </div>
                 </div>
@@ -170,18 +147,7 @@ if (!isset($_SESSION["nombre"])) {
                   <div class="form-group">
                     <label for="Nombre">Nombre del mecanico</label>
                     <select class="form-control" placeholder="Seleccionar" name="mecanico" id="mecanico" required>
-                      <?php
-                      $sql = "SELECT DISTINCT( u.idUsuario), u.nombre FROM usuario u INNER JOIN usuario_permiso s on s.idusuario = u.idusuario INNER JOIN permiso p on p.idpermiso = s.idpermiso WHERE p.nombre = 'Mecanico';";
-                      $query = mysqli_query($conexion, $sql);
-                      $idusuario = 0;
-                      while ($data = mysqli_fetch_assoc($query)) {
-                        $idusuario = $data['idUsuario'];
-                        $nombre = $data['nombre'];
-                      ?>
-                        <option value="<?php echo $idusuario; ?>"> <?php echo $nombre ?></option>
-                      <?php
-                      }
-                      ?>
+                      
                     </select>
                   </div>
                 </div>

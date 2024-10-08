@@ -111,32 +111,6 @@ $idCliente = $_POST["cliente"];
                 $query = mysqli_query($conexion, "SELECT p.idServicio, pd.Nombre, pd.Apellido, p.Total,
                     pd.Direccion, p.created_at, pd.Telefono, u.nombre as mecanico, p.garantia,
                     p.Detalle, pr.tipoVehiculo, pt.descripcion, pt.nombre, ph.Precio, pr.Placa FROM
-                    servicio p
-                    
-                    INNER JOIN
-                    vehiculo pr
-                    ON
-                    p.idVehiculo = pr.idVehiculo
-                    
-                    INNER JOIN
-                    categoria pt
-                    ON
-                    p.idCategoria = pt.idcategoria
-                    
-                    INNER JOIN
-                    costo ph
-                    ON
-                    p.idCosto= ph.idCosto
-                    
-                    INNER JOIN
-                    cliente pd
-                    ON
-                    p.Nombre = pd.idCliente
-
-                    INNER JOIN 
-                    usuario u
-                    on 
-                    u.idusuario = p.mecanico
 
                     WHERE pr.idCliente = '$idCliente'; ");
                 $data = mysqli_fetch_object($query);

@@ -90,30 +90,6 @@ if (!isset($_SESSION["nombre"])) {
                                                 $query = mysqli_query($conexion, "SELECT p.idServicio, p.created_at, pd.Nombre,pd.Apellido, p.descuento, p.facturado, p.image,
                                                     p.Detalle, p.Anticipo, p.Total, pr.tipoVehiculo, pt.descripcion, ph.Precio, pr.Placa, u.nombre as mecanico FROM
                                                     servicio p
-                                                    
-                                                    INNER JOIN
-                                                    vehiculo pr
-                                                    ON
-                                                    p.idVehiculo = pr.idVehiculo
-                                                    
-                                                    INNER JOIN
-                                                    categoria pt
-                                                    ON
-                                                    p.idCategoria = pt.idcategoria                   
-                                                    
-                                                    INNER JOIN
-                                                    costo ph
-                                                    ON
-                                                    p.idCosto= ph.idCosto
-                                                    
-                                                    INNER JOIN
-                                                    cliente pd
-                                                    ON
-                                                    p.Nombre = pd.idCliente
-
-                                                    INNER JOIN 
-                                                    usuario u
-                                                    on u.idusuario = p.mecanico
 
                                                 WHERE idServicio = p.idServicio ");
 
