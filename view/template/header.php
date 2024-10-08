@@ -23,7 +23,7 @@
   <meta name="format-detection" content="telephone=no" />
 
   <!-- PAGE TITLE HERE -->
-  <title>Taller V2</title>
+  <title>Talle Rolamp Davids</title>
 
   <!-- FAVICONS ICON -->
   <link
@@ -284,7 +284,7 @@
         </ul>
 
         <div class="copyright">
-          <p><strong>Taller V2</strong> © 2021 All Rights Reserved</p>
+          <p><strong>Talle Rolamp Davids</strong> © 2021 All Rights Reserved</p>
           <p class="fs-12">
             Made with <span class="heart"></span> Future Systems
           </p>
